@@ -1,0 +1,1 @@
+Test assignment for a vacancy Middle-Level Python Developer (Cryptocurrency Trading Bot)
