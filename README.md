@@ -94,11 +94,11 @@ flowchart LR
 4. **pandas.DataFrame.ewm:** https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.ewm.html
 5. **mplfinance:** https://pypi.org/project/mplfinance/
 
-## Tests
-**All implemented methods are covered by tests:** 
-test/test_steps.py
+## Covered by tests (pytest==7.4.0):
+**All implemented methods:** 
+/test/test_steps.py
 
-**Testing methods from the documentation:**
+**Methods from the documentation:**
 /test/test_ewm.py
 
 ## Schedule
