@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-def test_ewm_method(capsys):
+def test_ewm_method():
     stock_values = pd.DataFrame(
         {'Stock_Values': [60, 102, 103, 104, 101,
                           105, 102, 103, 103, 102]})
