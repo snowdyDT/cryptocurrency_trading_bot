@@ -29,3 +29,15 @@ def test_create_candlesticks():
     assert isinstance(result_.get(('PRICE', 'high')), pd.Series)
     assert isinstance(result_.get(('PRICE', 'low')), pd.Series)
     assert isinstance(result_.get(('PRICE', 'close')), pd.Series)
+
+
+def test_calculate_ema():
+    trades = bot_util.read_trades(file_path=bot_config.prices_file_path)
+    candlesticks = bot_util.create_candlesticks(trades=trades, time_interval=bot_config.Ema.time_interval.value)
+    result = bot_util.calculate_ema(data=candlesticks['PRICE']['close'], length=bot_config.Ema.ema_length.value)
+    result_ = list(result)
+    assert result_
+    assert isinstance(result_, list)
+    for ema in result_:
+        assert ema
+        assert isinstance(ema, float)
