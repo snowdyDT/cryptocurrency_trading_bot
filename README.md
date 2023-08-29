@@ -96,10 +96,10 @@ flowchart LR
 
 ## Tests
 **All implemented methods are covered by tests:** 
-cryptocurrency_trading_bot/blob/develop/test/test_steps.py
+test/test_steps.py
 
 **Testing methods from the documentation:**
-cryptocurrency_trading_bot/blob/develop/test/test_ewm.py
+/test/test_ewm.py
 
 ## Schedule
 - At the request of the business
