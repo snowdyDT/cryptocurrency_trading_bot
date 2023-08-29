@@ -66,7 +66,6 @@ flowchart LR
     A[Read trades] --> B[Create candlesticks]
     B --> C[Calculate EMA]
     C --> D[Visualization]
-    D --> A
 ```
 
 ## Launch Instructions
