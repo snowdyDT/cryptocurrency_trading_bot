@@ -3,17 +3,26 @@ from cryptocurrency_trading_bot import util as bot_util
 
 
 def main():
+    trades = bot_util.Trades()
+    candlesticks = bot_util.Candlesticks()
+    ema = bot_util.Ema()
+    visualization = bot_util.Visualization()
+
     # Read trades
-    trades = bot_util.read_trades(file_path=bot_config.prices_file_path)
+    trades_ = trades.read()
 
     # Create candlesticks
-    candlesticks = bot_util.create_candlesticks(trades=trades, time_interval=bot_config.Ema.time_interval.value)
+    candlesticks.trades = trades_
+    candlesticks_ = candlesticks.create()
 
     # Calculate EMA
-    ema = bot_util.calculate_ema(data=candlesticks['PRICE']['close'], length=bot_config.Ema.ema_length.value)
+    ema.data = candlesticks_['PRICE']['close']
+    ema_ = ema.calculate()
 
     # plt.show()
-    bot_util.plt_(ema=ema, candlesticks=candlesticks, ema_length=bot_config.Ema.ema_length.value)
+    visualization.ema = ema_
+    visualization.candlesticks = candlesticks_
+    visualization.show()
 
 
 if __name__ == '__main__':

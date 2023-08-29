@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 from cryptocurrency_trading_bot import config as bot_config
 from cryptocurrency_trading_bot import util as bot_util
@@ -75,3 +76,12 @@ def test_plt_show():
         assert isinstance(ema_value, float)
 
     bot_util.plt_(ema=ema, candlesticks=candlesticks, ema_length=bot_config.Ema.ema_length.value)
+
+
+def test_file_path():
+    file_path = bot_config.prices_file_path
+
+    if os.path.exists(file_path):
+        pd.read_csv(file_path)
+    else:
+        raise FileNotFoundError(f"No such file or directory: {file_path}")
