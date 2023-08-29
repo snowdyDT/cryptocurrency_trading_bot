@@ -55,13 +55,37 @@ Your submission will be evaluated based on the following criteria:
 ## Schedule
 - At the request of the business
 
-## Authors
+## Code Requirements
+· **Python Version:** Python 3.9.12
 
-| Role           | Name           | email                                                       | Phone |
-|----------------|----------------|-------------------------------------------------------------|-------|
-| Business Owner | AmaCryTeam     |                                                             |       |
-| Developer      | Shatekov Sabyr | [shatekov.sabyr@gmail.com](mailto:shatekov.sabyr@gmail.com) |       |
+· **Python Requirements:** requirements.txt
 
+· **Launch:** cryptocurrency_trading_bot/main.py
+
+## Launch Instructions
+
+1. Create a venv: **python -m venv /path/to/new/virtual/environment**
+2. Install necessary requirements: **pip install -r requirements**
+3. Check the path to the **prices.csv** file
+4. Run the file **cryptocurrency_trading_bot/main.py**
+5. Get the result from output
+
+## Result
+
+![result.png](cryptocurrency_trading_bot%2Fassets%2Fresult.png)
+
+## Code Description
+1. Gets data from a CSV file **[trades.read()]** using _pandas.read_csv_ method.
+2. Create candlesticks **[candlesticks.create()]** using _pandas.DataFrame.resample_ method.
+3. Calculate EMA **[ema.calculate()]** using _pandas.DataFrame.ewm_ method.
+4. Visualization result **[visualization.show()]** by graphic using _mplfinance_
+
+## Literatures
+1. **pandas:** https://pypi.org/project/pandas/
+2. **pandas.read_csv:** https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html
+3. **pandas.DataFrame.resample:** https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.resample.html
+4. **pandas.DataFrame.ewm:** https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.ewm.html
+5. **mplfinance:** https://pypi.org/project/mplfinance/
 
 ## Architecture
 
@@ -73,6 +97,9 @@ flowchart LR
     D --> A
 ```
 
-## Result
+## Authors
 
-![result.png](cryptocurrency_trading_bot%2Fassets%2Fresult.png)
+| Role           | Name           | email                                                       | Phone |
+|----------------|----------------|-------------------------------------------------------------|-------|
+| Business Owner | AmaCryTeam     |                                                             |       |
+| Developer      | Shatekov Sabyr | [shatekov.sabyr@gmail.com](mailto:shatekov.sabyr@gmail.com) |       |
