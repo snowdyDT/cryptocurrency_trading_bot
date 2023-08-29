@@ -66,6 +66,6 @@ class Visualization:
 
     def show(self):
         """
-        Show graphic of result by matplotlib
+        Show graphic of result by mplfinance
         """
         mpf.plot(self.candlesticks['PRICE'])

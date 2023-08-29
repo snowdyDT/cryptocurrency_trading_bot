@@ -9,6 +9,7 @@ build/
 builds/
 build
 out/
+.DS_Store
 
 # from https://github.com/github/gitignore/blob/main/Python.gitignore
 

@@ -71,7 +71,7 @@ flowchart LR
 ## Launch Instructions
 
 1. Create a venv: **python -m venv /path/to/new/virtual/environment**
-2. Install necessary requirements: **pip install -r requirements**
+2. Install necessary requirements: **pip install -r requirements.txt**
 3. Check the path to the **prices.csv** file
 4. Run the file **cryptocurrency_trading_bot/main.py**
 5. Get the result from output
