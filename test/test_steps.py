@@ -41,3 +41,37 @@ def test_calculate_ema():
     for ema in result_:
         assert ema
         assert isinstance(ema, float)
+
+
+def test_plt_show():
+    trades = bot_util.read_trades(file_path=bot_config.prices_file_path)
+    trades_ = dict(trades)
+    assert trades_
+    assert isinstance(trades_, dict)
+    assert 'TS' in trades_
+    assert 'PRICE' in trades_
+    assert isinstance(trades_.get('TS'), pd.Series)
+    assert isinstance(trades_.get('PRICE'), pd.Series)
+
+    candlesticks = bot_util.create_candlesticks(trades=trades, time_interval=bot_config.Ema.time_interval.value)
+    candlesticks_ = dict(candlesticks)
+    assert candlesticks_
+    assert isinstance(candlesticks_, dict)
+    assert ('PRICE', 'open') in candlesticks_
+    assert ('PRICE', 'high') in candlesticks_
+    assert ('PRICE', 'low') in candlesticks_
+    assert ('PRICE', 'close') in candlesticks_
+    assert isinstance(candlesticks_.get(('PRICE', 'open')), pd.Series)
+    assert isinstance(candlesticks_.get(('PRICE', 'high')), pd.Series)
+    assert isinstance(candlesticks_.get(('PRICE', 'low')), pd.Series)
+    assert isinstance(candlesticks_.get(('PRICE', 'close')), pd.Series)
+
+    ema = bot_util.calculate_ema(data=candlesticks['PRICE']['close'], length=bot_config.Ema.ema_length.value)
+    ema_ = list(ema)
+    assert ema_
+    assert isinstance(ema_, list)
+    for ema_value in ema_:
+        assert ema_value
+        assert isinstance(ema_value, float)
+
+    bot_util.plt_(ema=ema, candlesticks=candlesticks, ema_length=bot_config.Ema.ema_length.value)
