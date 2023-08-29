@@ -52,15 +52,22 @@ Your submission will be evaluated based on the following criteria:
 
 · Please submit your completed project within one three days from receiving this task.
 
-## Schedule
-- At the request of the business
-
 ## Code Requirements
 · **Python Version:** Python 3.9.12
 
 · **Python Requirements:** requirements.txt
 
 · **Launch:** cryptocurrency_trading_bot/main.py
+
+## Architecture
+
+```mermaid
+flowchart LR
+    A[Read trades] --> B[Create candlesticks]
+    B --> C[Calculate EMA]
+    C --> D[Visualization]
+    D --> A
+```
 
 ## Launch Instructions
 
@@ -87,15 +94,8 @@ Your submission will be evaluated based on the following criteria:
 4. **pandas.DataFrame.ewm:** https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.ewm.html
 5. **mplfinance:** https://pypi.org/project/mplfinance/
 
-## Architecture
-
-```mermaid
-flowchart LR
-    A[Read trades] --> B[Create candlesticks]
-    B --> C[Calculate EMA]
-    C --> D[Visualization]
-    D --> A
-```
+## Schedule
+- At the request of the business
 
 ## Authors
 
