@@ -72,3 +72,7 @@ flowchart LR
     C --> D[Visualization]
     D --> A
 ```
+
+## Result
+
+![result.png](cryptocurrency_trading_bot%2Fassets%2Fresult.png)
