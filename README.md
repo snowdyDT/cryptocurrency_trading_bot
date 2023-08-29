@@ -55,7 +55,7 @@ Your submission will be evaluated based on the following criteria:
 ## Schedule
 - At the request of the business
 
-## Авторы
+## Authors
 
 | Role           | Name           | email                                                       | Phone |
 |----------------|----------------|-------------------------------------------------------------|-------|
@@ -63,7 +63,7 @@ Your submission will be evaluated based on the following criteria:
 | Developer      | Shatekov Sabyr | [shatekov.sabyr@gmail.com](mailto:shatekov.sabyr@gmail.com) |       |
 
 
-## Архитектура
+## Architecture
 
 ```mermaid
 flowchart LR
