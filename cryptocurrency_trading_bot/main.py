@@ -1,4 +1,3 @@
-from cryptocurrency_trading_bot import config as bot_config
 from cryptocurrency_trading_bot import util as bot_util
 
 

@@ -1,9 +1,7 @@
 import os
 
-import matplotlib.dates as mdates
-import matplotlib.pyplot as plt
+import mplfinance as mpf
 import pandas as pd
-from mpl_finance import candlestick_ohlc
 
 from cryptocurrency_trading_bot import config as bot_config
 
@@ -67,17 +65,7 @@ class Visualization:
         self.ema_length = ema_length
 
     def show(self):
-        fig, ax = plt.subplots(figsize=(10, 6))
-        # Convert timestamp to float format for candlestick_ohlc
-        candlestick_data = [(mdates.date2num(date), open, high, low, close)
-                            for date, (open, high, low, close) in self.candlesticks['PRICE'].iterrows()]
-
-        candlestick_ohlc(ax, candlestick_data, width=0.6, colorup='g', colordown='r')
-        ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d %H:%M'))
-        ax.plot(self.ema.index, self.ema, label=f'EMA-{self.ema_length}', color='orange')
-        plt.xlabel('Date')
-        plt.ylabel('Price')
-        plt.title('Candlestick Chart with EMA')
-        plt.legend()
-        plt.xticks(rotation=45)
-        plt.show()
+        """
+        Show graphic of result by matplotlib
+        """
+        mpf.plot(self.candlesticks['PRICE'])
