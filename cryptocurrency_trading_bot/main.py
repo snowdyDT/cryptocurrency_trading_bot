@@ -18,7 +18,7 @@ def main():
     ema.data = candlesticks_['PRICE']['close']
     ema_ = ema.calculate()
 
-    # plt.show()
+    # Visualization
     visualization.ema = ema_
     visualization.candlesticks = candlesticks_
     visualization.show()
